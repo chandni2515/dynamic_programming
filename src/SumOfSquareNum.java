@@ -4,7 +4,7 @@ public class SumOfSquareNum {
         System.out.println("len = " + len);
         return false;
     }
-    
+
     public static void main(String[] args){
         boolean result = judgeSquareSum(5);
         System.out.println("result = " + result);
@@ -15,4 +15,5 @@ public class SumOfSquareNum {
         boolean result3 = judgeSquareSum(73);
         System.out.println("result = " + result3);
     }
+
 }
