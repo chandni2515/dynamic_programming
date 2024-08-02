@@ -50,5 +50,6 @@ public class ArrayIntersection {
         int[] arr1 = new int[]{4,9,5};
         int[] arr2 = new int[]{9,4,9,8,4};
         System.out.println("result = " + Arrays.toString(intersect(arr1, arr2)));
+
     }
 }

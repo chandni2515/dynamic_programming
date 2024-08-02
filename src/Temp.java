@@ -1,32 +1,65 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Temp {
-    public static ArrayList<Integer> commonElements(ArrayList<ArrayList<Integer>> arr) {
-        Set<Integer> result = new HashSet<>(arr.get(0));
-        for (int i = 1; i < arr.size(); i++) {
-            result.retainAll(arr.get(i));
-            System.out.println("result = " + result);
+    public static List<String> commonChars(String[] words) {
+        Map<Character, Integer> common = new HashMap<>();
+        calculateFrequency(words, 0, common);
+
+        for (int i = 1; i < words.length; i++) {
+            Map<Character, Integer> curr = new HashMap<>();
+            calculateFrequency(words, i, curr);
+            for (char c : common.keySet()) {
+                if (curr.containsKey(c)) {
+                    common.put(c, Math.min(common.get(c), curr.get(c)));
+                } else {
+                    common.put(c, 0);
+                }
+            }
         }
-        return new ArrayList<>(result);
+
+        List<String> res = new ArrayList<>();
+        for (Map.Entry<Character, Integer> entry : common.entrySet()) {
+            int count = entry.getValue();
+            while (count > 0) {
+                res.add(entry.getKey().toString());
+                count--;
+            }
+        }
+        return res;
+    }
+
+    private static void calculateFrequency(String[] words, int index, Map<Character, Integer> common) {
+        for (char c : words[index].toCharArray()) {
+            common.put(c, common.getOrDefault(c, 0) + 1);
+        }
     }
 
     public static void main(String[] args) {
-        ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
-        arr.add(new ArrayList<Integer>() {{ add(1); add(2); add(3); add(4); }});
-        arr.add(new ArrayList<Integer>() {{ add(3); add(4); add(5); add(6); }});
-        arr.add(new ArrayList<Integer>() {{ add(7); add(8); add(3); add(4); }});
-        arr.add(new ArrayList<Integer>() {{ add(4); add(9); add(8); add(3); }});
-        arr.add(new ArrayList<Integer>() {{ add(4); add(3); add(10); add(12); }});
+//        String[] words = new String[]{"bella", "label", "roller"};
+//        System.out.println("words = " + commonChars(words));
 
-
-        ArrayList<Integer> res = commonElements(arr);
-        if (!res.isEmpty()) {
-            System.out.println("The common elements present within the array are: " + res);
-        } else {
-            System.out.println("There are no common elements present within the array !!");
+        String s="bbaaaaabb";
+        StringBuilder sb=new StringBuilder(s);
+        String match="ba";
+        int result=0;
+        System.out.println("sb = " + sb);
+        int i=0;
+        while(i<sb.length()-1){
+            char c=sb.charAt(i);
+            if(c=='b'){
+                String sub=String.valueOf(c)+sb.charAt(i+1);
+                if(sub.equals(match)){
+                    sb.delete(i,i+2);
+                    result++;
+                    System.out.println("after delete,sb: "+sb);
+                    if(i>0) i--;
+                }else{
+                    i++;
+                }
+            }else i++;
         }
+        System.out.println("at end sb: "+sb);
+        System.out.println("result: "+result);
     }
 }
-
