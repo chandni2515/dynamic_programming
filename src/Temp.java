@@ -36,30 +36,9 @@ public class Temp {
     }
 
     public static void main(String[] args) {
-//        String[] words = new String[]{"bella", "label", "roller"};
-//        System.out.println("words = " + commonChars(words));
+        String[] words = new String[]{"bella", "label", "roller"};
+        System.out.println("words = " + commonChars(words));
 
-        String s="bbaaaaabb";
-        StringBuilder sb=new StringBuilder(s);
-        String match="ba";
-        int result=0;
-        System.out.println("sb = " + sb);
-        int i=0;
-        while(i<sb.length()-1){
-            char c=sb.charAt(i);
-            if(c=='b'){
-                String sub=String.valueOf(c)+sb.charAt(i+1);
-                if(sub.equals(match)){
-                    sb.delete(i,i+2);
-                    result++;
-                    System.out.println("after delete,sb: "+sb);
-                    if(i>0) i--;
-                }else{
-                    i++;
-                }
-            }else i++;
-        }
-        System.out.println("at end sb: "+sb);
-        System.out.println("result: "+result);
     }
 }
+
