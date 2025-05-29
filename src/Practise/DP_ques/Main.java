@@ -1,4 +1,4 @@
- //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+package Practise.DP_ques; //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 // Knapsack Problem: dynamic programming approach; Time complexity: O(NW)

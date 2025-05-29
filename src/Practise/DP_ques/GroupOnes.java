@@ -1,3 +1,5 @@
+package Practise.DP_ques;
+
 public class GroupOnes {
     public static int minSwaps(int[] nums) {
         int n=nums.length;

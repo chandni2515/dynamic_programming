@@ -1,3 +1,5 @@
+package Practise.DP_ques;
+
 public class MaximumGain {
 
     public static int maximumGain(String s, int x, int y) {

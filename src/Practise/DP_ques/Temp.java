@@ -1,3 +1,5 @@
+package Practise.DP_ques;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -39,6 +41,7 @@ public class Temp {
         String[] words = new String[]{"bella", "label", "roller"};
         System.out.println("words = " + commonChars(words));
 
+//        System.out.println(null);
     }
 }
 

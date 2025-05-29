@@ -1,3 +1,5 @@
+package Practise.DP_ques;
+
 public class SumOfSquareNum {
     public static boolean judgeSquareSum(int c) {
         double len=Math.ceil(Math.sqrt(c));

@@ -1,3 +1,5 @@
+package Practise.DP_ques;
+
 import java.util.Arrays;
 
 public class ReverseAndCompareTwoArrays {
